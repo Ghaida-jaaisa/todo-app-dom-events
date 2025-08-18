@@ -29,10 +29,9 @@ addBtn.addEventListener("click", function () {
     note.textContent = "Task added successfully!";
     note.style.display = "block";
     // Hide notification after 2 seconds
-    setTimeout(() => {  
-        note.style.display = "none";
-        }
-    , 2000); // Hide notification after 2 seconds
+    setTimeout(() => {
+      note.style.display = "none";
+    }, 2000); // Hide notification after 2 seconds
 
     // Add event listeners for delete and checkbox
     deleteBtn.addEventListener("click", function () {
@@ -59,5 +58,11 @@ addBtn.addEventListener("click", function () {
     inputField.value = ""; // Clear the input field after adding
   } else {
     alert("Please enter a todo item.");
+  }
+});
+
+inputField.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    addBtn.click();
   }
 });
