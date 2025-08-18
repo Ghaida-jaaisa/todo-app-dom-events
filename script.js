@@ -27,7 +27,6 @@ addBtn.addEventListener("click", function () {
 
     const note = document.getElementById("add-task-notification");
     note.textContent = "Task added successfully!";
-    // Show notification
     note.style.display = "block";
     // Hide notification after 2 seconds
     setTimeout(() => {  

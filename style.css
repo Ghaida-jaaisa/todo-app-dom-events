@@ -76,6 +76,9 @@ h1 {
 }
 
 .todo-item {
+  font-family: "Reem Kufi Ink", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -84,13 +87,18 @@ h1 {
   margin-bottom: 10px;
 }
 
+#todo-input {
+  font-family: "Reem Kufi Ink", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 #add-task-notification {
   color: #730002;
   font-family: "Reem Kufi Ink", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
-
 
 .todo-item input[type="checkbox"] {
   width: 20px;
