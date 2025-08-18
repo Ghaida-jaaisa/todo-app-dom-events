@@ -4,6 +4,11 @@ A simple, stylish, and interactive **To-Do List Web App** built with **HTML, CSS
 This project allows users to add tasks, mark them as completed, and delete them — with a clean UI and smooth interactions.  
 
 ---
+## 🎨 Design Source
+The design of this project was inspired by a community file on **Figma**:  
+👉 [Figma To-Do List Design](https://www.figma.com/community/file/1457369137691535442)
+
+---
 
 ## 🚀 Features
 - ➕ Add new tasks easily.  
