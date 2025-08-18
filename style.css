@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #e89da4;
+}
+
+#main-container {
+  background-color: #ffc3ce;
+  background-image: url("assets/imgs/Rectangle 5.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 50px auto;
+  width: calc(100% - 120px);
+  min-height: 100vh;
+  max-height: fit-content;
+  border-radius: 46px;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+h1 {
+  color: #730002;
+  font-size: 40px;
+  font-family: "Carter One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+
+#main-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+#main-input input {
+  background-color: #ffd4d4;
+  width: 300px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  padding: 0 20px;
+  font-size: 16px;
+}
+
+#main-input button {
+  background-color: #730002;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+#main-input button:hover {
+  background-color: #a00000;
+}
+
+#tasks {
+  margin-top: 20px;
+}
+#tasks #task-list {
+  padding: 0;
+  display: flex;
+  /* flex-direction: column; */
+}
+
+.todo-item {
+  display: flex;
+  flex-direction: row;
+  /* background-color: red; */
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.todo-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: green;
+  cursor: pointer;
+}
+
+.todo-content {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+#todo-list li {
+  list-style: none;
+  background-color: #ffd4d4;
+  width: 300px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  padding: 0 20px;
+  font-size: 16px;
+}
+
+.delete-btn {
+  border: none;
+  background-color: transparent;
+}
+
+.delete-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: grey;
+}
+
+/* Media Query  */
+@media screen and (min-height: 100vh) {
+}
