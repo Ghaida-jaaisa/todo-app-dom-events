@@ -25,6 +25,17 @@ addBtn.addEventListener("click", function () {
     deleteIcon.alt = "Delete Icon";
     deleteBtn.appendChild(deleteIcon);
 
+    const note = document.getElementById("add-task-notification");
+    note.textContent = "Task added successfully!";
+    // Show notification
+    note.style.display = "block";
+    // Hide notification after 2 seconds
+    setTimeout(() => {  
+        note.style.display = "none";
+        }
+    , 2000); // Hide notification after 2 seconds
+
+    // Add event listeners for delete and checkbox
     deleteBtn.addEventListener("click", function () {
       todoItem.remove();
     });
