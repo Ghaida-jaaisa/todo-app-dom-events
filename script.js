@@ -1,4 +1,4 @@
-const addBtn = document.getElementById("add-btn");
+const addBtn = document.getElementById("add-btn"); 
 const inputField = document.getElementById("todo-input");
 const todoList = document.getElementById("todo-list");
 
@@ -14,9 +14,11 @@ function saveTasks(tasks) {
 }
 
 // Build new task
-function addTask(text, isCompleted = false) {
+function addTask(text, isCompleted = false, id = null) {
+  const taskId = id || Date.now();
   const todoItem = document.createElement("div");
   todoItem.className = "todo-item";
+  todoItem.dataset.id = taskId; 
   if (isCompleted) {
     todoItem.classList.add("completed");
   }
@@ -43,7 +45,7 @@ function addTask(text, isCompleted = false) {
   // When Delete button is clicked
   deleteBtn.addEventListener("click", function () {
     todoItem.remove();
-    let tasks = getTasks().filter((t) => t.text !== text);
+    let tasks = getTasks().filter((t) => t.id !== taskId);
     saveTasks(tasks);
   });
 
@@ -51,7 +53,7 @@ function addTask(text, isCompleted = false) {
   isDone.addEventListener("change", function () {
     todoItem.classList.toggle("completed", isDone.checked);
     let tasks = getTasks().map((t) =>
-      t.text === text ? { ...t, isCompleted: isDone.checked } : t
+      t.id === taskId ? { ...t, isCompleted: isDone.checked } : t
     );
     saveTasks(tasks);
   });
@@ -66,9 +68,10 @@ function addTask(text, isCompleted = false) {
 addBtn.addEventListener("click", function () {
   const todoText = inputField.value.trim();
   if (todoText) {
-    addTask(todoText, false);
+    const taskId = Date.now(); // unique ID
+    addTask(todoText, false, taskId);
     let tasks = getTasks();
-    tasks.push({ text: todoText, isCompleted: false });
+    tasks.push({ id: taskId, text: todoText, isCompleted: false });
     saveTasks(tasks);
     inputField.value = "";
     const note = document.getElementById("add-task-notification");
@@ -92,5 +95,5 @@ inputField.addEventListener("keydown", (e) => {
 
 // When Page reload
 window.addEventListener("load", () => {
-  getTasks().forEach((task) => addTask(task.text, task.isCompleted));
+  getTasks().forEach((task) => addTask(task.text, task.isCompleted, task.id));
 });
